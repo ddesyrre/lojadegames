@@ -25,12 +25,14 @@ public class Produto {
 		private Long id;
 		
 		@NotBlank(message = "O atributo titulo é obrigatório!") 
-		@Size(min = 3, max = 100, message = "O atributo título deve conter no mínimo 05 e no máximo 100 caracteres")
+		@Size(min = 3, max = 100, message = "O atributo título deve conter no mínimo 03 e no máximo 100 caracteres")
 		private String titulo;
 		
 		@NotBlank(message = "O atributo descrição é obrigatório!")
 		@Size(min = 10, max = 1000, message = "O atributo texto deve conter no mínimo 10 e no máximo 1000 caracteres")
 		private String descricao;
+		
+		private int estoque; 
 		
 		@UpdateTimestamp
 		private LocalDateTime data;
@@ -78,6 +80,14 @@ public class Produto {
 	    public void setCategoria(Categoria categoria) {
 	        this.categoria = categoria;
 	    }
+
+		public int getEstoque() {
+			return estoque;
+		}
+
+		public void setEstoque(int estoque) {
+			this.estoque = estoque;
+		}
 
 	}
 
